@@ -1,0 +1,59 @@
+# Crawl Init file
+# See the README for further details:
+# https://github.com/gammafunk/dcss-rc/blob/master/README.md
+
+# NOTE: This RC has things for RandomTiles.rc and gammaspeed.rc enabled only
+# for my username. If you copy gammafunk.rc to your own RC file, it's a good
+# idea to find and remove sections in `if' statments that look like this:
+#
+# if you.name() == "gammafunk" then
+# ...
+# end
+#
+# and either remove these sections completely if you don't want
+# RandomTiles.rc/gammaspeed.rc, or, if you do want those files, remove only the
+# containing if statments so that those files are loaded in your RC.
+
+################
+### RC files ###
+################
+
+#include rc/autopickup.rc
+#include rc/console.rc
+#include rc/display.rc
+#include rc/inscriptions.rc
+#include rc/interface.rc
+#include rc/item_slots.rc
+#include rc/macros.rc
+#include rc/menu_colors.rc
+#include rc/messages.rc
+#include rc/morgue.rc
+#include rc/spell_slots.rc
+#include rc/tiles.rc
+#include rc/travel.rc
+
+###########
+### Lua ###
+###########
+
+{
+#include lua/autopickup.lua
+#include lua/cast_spell.lua
+#include lua/char_defaults.lua
+#include lua/force_mores.lua
+}
+
+# The ready() function is needed for code that has to process each turn or UI
+# action.
+{
+function ready()
+  char_defaults(false)
+  force_mores()
+end
+}
+
+#############
+### Debug ###
+#############
+
+fsim_rounds = 10000

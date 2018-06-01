@@ -1,0 +1,31 @@
+##################
+### Item slots ###
+##################
+
+## In order of letter used.
+item_slot += amulet of harm : A
+item_slot += amulet of rage : B
+item_slot += ring of (ice|protection from cold) : Cc
+item_slot += amulet of (warding|dismissal) : D
+item_slot += \+[0-9]+ ring of evasion : Ee
+item_slot += ring of .*fire : Ff
+item_slot += amulet of regeneration : g
+item_slot += amulet of guardian spirit : G
+item_slot += amulet of faith : H
+item_slot += \+[0-9]+ ring of intelligence : Ii
+item_slot += ring of flight : L
+item_slot += ring of protection from magic : Mm
+item_slot += ring of positive energy : Nn
+item_slot += \+[0-9]+ ring of protection : Oo
+item_slot += ring of poison resistance : P
+item_slot += ring of stealth : Qq
+item_slot += ring of resist corrosion : R
+item_slot += amulet of mana regeneration : r
+item_slot += \+[0-9]+ ring of strength : Ss
+item_slot += ring of teleportation : t
+item_slot += amulet of gourmand : U
+item_slot += ring of see invisible : v
+item_slot += ring of magical power : Ww
+item_slot += \+[0-9]+ ring of dexterity : Xx
+item_slot += \+[0-9]+ ring of slaying : Yy
+item_slot += ring of wizardry : Zz

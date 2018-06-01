@@ -1,0 +1,27 @@
+########################
+### Autoinscriptions ###
+########################
+
+show_god_gift = unident
+
+ai := autoinscribe
+
+ai += (bad|dangerous)_item.*potion:!q
+ai += (bad|dangerous)_item.*scroll:!r
+ai += potions? of berserk rage:!q
+ai += scrolls? of silence:!r
+
+ai += of faith:!P
+ai += manual of:!d
+ai += staff of (Wucad Mu|energy|wizardry|power|conjuration|summoning):!a
+ai += (large rock|throwing net|curare|of dispersal):=f
+
+# Convenient shortcuts
+ai += curing:@q1
+ai += potions? of heal wounds:@q2
+ai += potions? of haste:@q3
+ai += scrolls? of teleportation:@r4
+ai += identify:@r1
+ai += remove curse:@r2
+ai += blowgun:@w1
+ai += ( ration):@e1

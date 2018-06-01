@@ -1,0 +1,23 @@
+#################
+### Interface ###
+#################
+
+default_manual_training = true
+easy_eat_chunks = true
+auto_eat_chunks = true
+equip_unequip = true
+sort_menus = true:equipped,identified,basename,art,ego,glowing,qualname,curse,charged,slot
+ability_menu = false
+
+autofight_stop  = 50
+autofight_caught = true
+autofight_wait = false
+auto_switch = true
+
+: if you.race() == "Troll" then
+  auto_butcher = very full
+: else
+  auto_butcher = hungry
+: end
+
+bindkey = [~] CMD_LUA_CONSOLE

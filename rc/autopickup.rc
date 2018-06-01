@@ -1,0 +1,19 @@
+##################
+### Autopickup ###
+##################
+
+# Add staves, rods, misc; note you can't use += with this option.
+autopickup = $?!:""/%}|\
+
+ae := autopickup_exceptions
+ae += <throwing net
+
+# Exceptions
+# I use immolation somewhat early on, and vulnerability is useful the entire
+# game.
+ae += <vulnerability|immolation
+# Tend to not use these.
+ae += >scrolls? of silence
+ae += >(crystal ball of energy|disc of storm)
+# Don't ever need a second stave
+ae += staff of .*

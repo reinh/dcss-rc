@@ -1,0 +1,114 @@
+###################
+### Menu Colors ###
+###################
+
+# These should match the item_glyph colours exactly when possible.
+# For menu_colour, the first match ignores subsequent matches.
+menu := menu_colour
+menu =
+
+# Many of the entries below come from dat/defaults/menu_colours.txt,
+# which we have to duplicate here since we want only some of the
+# entries from that file.
+menu += notes:white:Reached XP level
+
+### General Inventory###
+# Items currently not affecting you.
+menu += darkgrey:(melded)
+# Items disliked by your god.
+menu += red:forbidden
+# Useless items, comes here to override artefacts etc.
+menu += darkgrey:.*useless.*
+# Handle cursed and equipped items early to override other colour settings.
+menu += lightred:.*equipped.* cursed
+menu += red: (a|the) cursed
+menu += inventory:lightgreen:.*equipped.*
+# Colouring of autoinscribed god gifts
+menu += pickup:lightred:god gift
+# Highlight (partly) selected items
+menu += inventory:white:\w \+\s
+menu += inventory:white:\w \#\s
+
+### Food ###
+# Color chunks, put ordinary ones on lightgrey.
+menu += red:evil_eating.*chunk
+menu += blue:mutagenic.*chunk
+menu += lightgrey: +(chunks?$|chunks? +)
+# Other food
+
+menu += green:( ration)
+
+### Potions ###
+
+: if you.race() == "Vampire" then
+  menu += lightgrey:potions? of blood
+: end
+menu += lightgrey:potions? of.*(curing|flight)
+menu += brown:potions? of.*berserk
+menu += yellow:potions? of.*might
+menu += cyan:potions? of.*cancellation
+
+menu += blue:potions? of.*(lignification|ambrosia)
+menu += lightred:potions? of.*experience
+menu += white:potions? of.*heal wounds
+menu += green:potions? of.*(resistance|agility)
+menu += lightgreen:potions? of.*(haste|invisibility)
+menu += lightcyan:potions? of.*mutation
+menu += magenta:potions? of.*brilliance
+menu += lightmagenta:potions? of.*magic
+
+### Scrolls ###
+
+: if you.race() == "Vampire" or you.race() == "Mummy"
+:  or you.race() == "Ghoul" then
+  menu += darkgrey:scroll.*holy word
+  menu += brown:scroll.*torment
+: else
+  menu += brown:scroll.*holy word
+  menu += darkgrey:scroll.*torment
+: end
+
+menu += white:scroll.*acquirement
+menu += yellow:scroll.*(summoning)
+menu += cyan:scroll.*identify
+menu += lightcyan:scroll.*magic mapping
+
+menu += blue:scroll.*(noise|silence|vulnerability|immolation)
+menu += lightgrey:scroll.*remove curse
+menu += green:scroll.*(fog|teleport)
+menu += lightgreen:scroll.*(fear|blink)
+menu += magenta:scroll.*(recharging)
+menu += lightmagenta:scroll.*(enchant|brand weapon)
+
+### Wands ###
+
+# Can be harmful
+menu += blue:wand of.*random effects
+
+# High level damage
+menu += brown:wand of.*lightning
+menu += yellow:wand of.*acid
+
+menu += lightgrey:wand of.*flame
+menu += white:wand of.*clouds
+
+menu += green:wand of.*digging
+
+menu += cyan:wand of.*iceblast
+menu += lightcyan:wand of.*scattershot
+
+menu += magenta:wand of.*(disintegration|confusion|polymorph)
+menu += lightmagenta:wand of.*(paralysis|enslavement)
+
+### General identification ###
+
+menu += cyan:manual of
+menu += lightcyan:manual
+menu += lightmagenta:unidentified.*artefact.*
+menu += white:.*artefact.*
+menu += lightblue:unidentified .*(potion|scroll|wand|jewellery|spellbook|rod|magical staff)
+menu += magenta:.*known .*(ring of (dexterity|strength|intelligence|slaying|evasion|protection(?! from))|amulet of reflection)
+menu += inventory:lightgray:.*(book|jewellery|magical staff)
+# Ego items
+menu += lightblue:unidentified.*weapon.*(runed|glowing|enchanted)
+menu += lightblue:unidentified.*armour.*(runed|glowing|embroidered|shiny|dyed)

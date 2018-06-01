@@ -1,0 +1,176 @@
+################
+### Messages ###
+################
+
+channel.multiturn = mute
+
+msc := message_colour
+msc += mute:returns to your side
+msc += mute:a demon appears
+msc += lightgrey:The deck of cards disappears
+msc += mute:puff of smoke
+msc += mute:carefully avoids
+msc += mute:is recalled
+msc += mute:wall.*burn.*your
+msc += mute:dissolves? into (sparkling lights|shadows)
+msc += mute:(crumbles|melts) away\.
+msc += mute:(merges|forms) itself .* the air
+msc += mute:you swap places
+msc += mute:your.*(looks stronger|shudders|resists)
+msc += mute:your.*(stumbles backwards|holds.*ground)
+msc += mute:your.*(blinks|safely over)
+msc += mute:(phases out.*|misses) (your|something).*
+msc += mute:your.*(picks up|drops)
+msc += mute:your.*basks in the mutagenic energy
+msc += mute:your.*(struggles|tears|pulls away).*(web|net)
+
+more := force_more_message
+: if you.god() == "Ashenzari" then
+more += You have a vision of.*gates?
+: end
+
+more += The mighty Pandemonium lord .* resides here
+
+# Interrupts
+more += You don't .* that spell
+more += You fail to use your ability
+more += You miscast.*(Blink|Borgnjor|Door|Invisibility)
+more += You can't (read|drink|do)
+more += You cannot .* while unable to breathe
+more += You cannot .* in your current state
+more += when .*silenced
+more += too confused
+more += There's something in the way
+more += There's nothing to (close|open) nearby
+more += not good enough to have a special ability
+more += You are too berserk
+more += no means to grasp
+more += That item cannot be evoked
+more += This wand has no charges
+more += You are held in a net
+more += You don't have any such object
+more += You can't unwield
+more += enough magic points
+more += You don't have the energy to cast that spell
+more += You are unable to access your magic
+
+# Bad things
+more += Your surroundings flicker
+more += You cannot teleport right now
+more += A sentinel's mark forms upon you
+more += (blundered into a|invokes the power of) Zot
+more += enter a teleport trap
+more += Ouch! That really hurt!
+more += dispelling energy hits you
+more += You are blasted by holy energy!
+more += You are (blasted|electrocuted)!
+more += You are.*(confused|poisoned)
+more += flesh rotting
+more += (starving|devoid of blood)
+more += god:(sends|finds|silent|anger)
+more += You feel a surge of divine spite
+more += disloyal to dabble
+more += lose consciousness
+more += You are too injured to fight blindly
+more += calcifying dust hits
+more += Space warps.*around you
+more += Space bends around you
+more += watched by something
+more += flickers and vanishes!
+more += doesn't seem very happy
+more += is no longer charmed
+
+# Hell effects
+more += hell_effect:
+
+# Expiring effects
+more += You feel yourself slow down
+more += You are starting to lose your buoyancy
+more += Your hearing returns
+more += Your transformation is almost over
+more += You have a feeling this form
+more += You feel yourself come back to life
+more += time is quickly running out
+more += life is in your own hands
+more += Your shroud falls apart
+more += You start to feel a little slower
+more += You feel less protected from missiles
+
+# Others
+more += You have reached level
+more += You rejoin the land of the living
+more += You have finished (your manual|forgetting about)
+more += Your scales start
+more += You feel monstrous
+more += Jiyva alters your body
+: if you.god() == "Xom" then
+more += god:
+: end
+
+# Dangerous monsters we force_more when first seen.
+# Things with ranged (or extremely fast), irresistable effects.
+more += ((floating|shining) eye|dream sheep|death drake).*into view
+more += (wretched star|apocalypse crab|death drake).*into view
+more += (entropy weaver|torpor snail|spriggan druid).*into view
+more += (vault (warden|sentinel)|merfolk (avatar|siren)).*into view
+more += (guardian serpent|draconian shifter|convoker|death cob).*into view
+more += (phantasmal warrior|air elemental).*into view
+# Paralysis/Petrify/Banish
+more += (orc sorcerer|wizard|ogre mage|great orb of eyes|sphinx).*into view
+more += (vampire knight|basilisk|deep elf (sorcerer|demonologist)).*into view
+# Torment/flay or hellfire
+more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
+more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
+more += (deep elf (sorcerer|high priest)|draconian scorcher).*into view
+# Things that can hit for over 90+ damage in a turn that is either ranged or
+# very fast.
+more += ((deep elf|draconian) annihilator|tengu reaver).*into view
+more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
+
+# Any uniques and any pan lords
+more += (?-i:[A-Z]).* comes? into view
+
+stop := runrest_stop_message
+ignore := runrest_ignore_message
+
+:if you.god() == "Xom" then
+stop += god:
+:else
+ignore += god:
+:end
+
+# Bad things
+stop += A huge blade swings out and slices into you
+stop += (starving|devoid of blood)
+stop += wrath finds you
+stop += lose consciousness
+stop += hell_effect:
+
+# Expiring effects
+stop += You feel yourself slow down
+stop += You are starting to lose your buoyancy
+stop += Your hearing returns
+stop += Your transformation is almost over
+stop += back to life
+stop += time is quickly running out
+stop += life is in your own hands
+stop += is no longer charmed
+
+: if you.race() == "Ghoul" then
+stop += smell.*(rott(ing|en)|decay)
+stop += something tasty in your inventory
+: end
+
+# Annoyances
+ignore += grinding sound
+ignore += contamination has completely
+ignore += your breath back
+
+ignore += pray:
+ignore += talk:
+ignore += talk_visual:
+ignore += friend_spell:
+ignore += friend_enchant:
+ignore += friend_action:
+ignore += sound:
+

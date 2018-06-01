@@ -1,0 +1,28 @@
+##############
+### Morgue ###
+##############
+
+note_hp_percent = 10
+note_all_skill_levels = true
+note_chat_messages = false
+user_note_prefix = >>
+
+note_items += experience,of resistance, Archmagi
+note_items += crystal plate armour,pearl dragon scales
+note_items += artefact,wand of (heal wounds|hasting|teleportation)
+note_messages += You feel monstrous
+note_messages += You pass through the gate
+note_messages += cast .* Abyss
+
+# Noteable monsters
+# Undead
+note_monsters += ancient lich,curse skull,curse toe,greater mummy
+# Depths
+note_monsters += caustic shrike
+# Special hall_of_zot spawns
+note_monsters += killer klown,electric golem,orb of fire
+
+dump_message_count = 30
+dump_order  = header,hiscore,stats,misc,mutations,skills,spells,inventory
+dump_order += overview,screenshot,monlist,messages,skill_gains,action_counts
+dump_order += vaults,notes,kills,turns_by_place,xp_by_level

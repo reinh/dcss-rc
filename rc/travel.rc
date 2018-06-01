@@ -1,0 +1,13 @@
+############################
+### Travel & Exploration ###
+############################
+
+rest_wait_both = true
+auto_sacrifice = true
+travel_delay = -1
+explore_delay = -1
+rest_delay = -1
+
+show_travel_trail = false
+explore_stop += greedy_items
+wall_jump_move = false

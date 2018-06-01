@@ -1,0 +1,46 @@
+* ReinH's DCSS Config
+
+This project has settings and lua code for use in configuration files for [[http://crawl.develz.org][DCSS]].
+Everything here is based on [[https://github.com/gammafunk/dcss-rc][gammafunk's config]]. It is separated into multiple
+sections and Lua files and compiled into a single config file using [[https://github.com/logological/gpp][gpp]].
+
+** How To Use It
+
+1. *Install gpp:* For Homebrew users, =brew bundle=. For apt users, =sudo apt-get
+   install gpp=. For others, do something else.
+2. *Compile the config:* =make=.
+3. *Use the config:* For *nix users, =ln -s reinh.rc ~/.crawlrc=. For others,
+   probably copy it or whatever.
+
+** Macros and Binds
+
+| Key       | What                    |
+|-----------+-------------------------|
+| =~=       | Lua console             |
+| =]=       | ~===save_char_defaults~ |
+| =<space>= | ~5~                     |
+| =<enter>= | ~zz.~                   |
+
+** Character Defaults
+
+Save and load default skill settings for each race+class combination
+automatically on turn 0. Saving skill settings is bound to =]= in
+=rc/macros.rc=. Loading is automatic.
+
+** Force Mores
+
+Adds and removes force-more messages automatically based on current max hp or
+experience level.
+
+Force-more messages print a message of "--more--" and require the player to hit
+space, making the player pause for consideration before acting. These are
+normally set in the rc option =force_more_message=. For certain dangerous
+monsters it's common to make a force-more specifically for when the monster
+first comes into view (i.e. each time the player encounters a new monster of
+that type). For some monsters, it's desirable to have these messages only for
+weaker characters or only for earlier portions of the game.
+
+This code has a set of dynamic force-mores defined for characters with lower hp,
+with sets defined for XL1, Maxhp < 20, Maxhp < 40, Maxhp < 60, and Maxhp < 90,
+and so on. Other sets can be defined by modifying the variable =fm_patterns=;
+see the comments above that variable for details.

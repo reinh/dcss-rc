@@ -9,7 +9,7 @@ equip_unequip = true
 sort_menus = true:equipped,identified,basename,art,ego,glowing,qualname,curse,charged,slot
 ability_menu = false
 
-autofight_stop  = 50
+autofight_stop = 75
 autofight_caught = true
 autofight_wait = false
 auto_switch = true

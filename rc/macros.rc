@@ -16,4 +16,6 @@
 # }
 
 macros += M 1 zz
+macros += M \{13} zz. # enter
+macros += M \{32} 5 # space
 macros += M ] ===save_char_defaults

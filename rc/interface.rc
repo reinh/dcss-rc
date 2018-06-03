@@ -16,10 +16,14 @@ autofight_caught = true
 autofight_wait = false
 auto_switch = true
 
+automagic_enable = true
+automagic_slot = z
+automagic_stop = 75
+
 : if you.race() == "Troll" then
-  auto_butcher = very full
+  auto_butcher = engorged
 : else
-  auto_butcher = hungry
+  auto_butcher = full
 : end
 
 bindkey = [~] CMD_LUA_CONSOLE

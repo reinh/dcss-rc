@@ -3,11 +3,11 @@
 ###########################
 
 # Move off `aa` so we don't miss-trigger it.
-ability_slot += Berserk:k
-ability_slot += Fly|flight:lF
-ability_slot += Stop Flying:L
-ability_slot += Breathe:t
-ability_slot += Blink:IB
+ability_slot += Berserk:bk
+ability_slot += Fly|flight:fl
+ability_slot += Stop Flying:FL
+ability_slot += Breathe:bt
+ability_slot += Blink:B
 ability_slot += Invisibility:iv
 
 # Use z for L1 damage/buff spells in starting books.

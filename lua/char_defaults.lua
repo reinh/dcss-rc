@@ -40,7 +40,7 @@ function skill_message(prefix, skill, skill_type, value)
   return msg
 end
 
-function save_char_defaults(quiet)
+function save_char_defaults()
   if you.class() == "Wanderer" then
     return
   end
@@ -84,9 +84,7 @@ function save_char_defaults(quiet)
       chdat[sk] = nil
     end
   end
-  if not quiet then
-    mpr("Saved default for " .. char_combo .. ": " .. msg)
-  end
+  mpr("Saved default for " .. char_combo .. ": " .. msg)
 end
 
 function have_defaults()
@@ -95,7 +93,7 @@ function have_defaults()
     and c_persist.char_defaults[char_combo] ~= nil
 end
 
-function load_char_defaults(quiet)
+function load_char_defaults()
   if not have_defaults() then
     return
   end
@@ -141,18 +139,28 @@ function load_char_defaults(quiet)
       you.train_skill(sk, 0)
     end
   end
-  if not quiet and msg ~= "" then
+  if msg ~= "" then
     mpr("Loaded default for " .. char_combo .. ": " .. msg)
   end
 end
 
-function char_defaults(quiet)
+function dwim_char_defaults()
+  if you.turns() ~= 0 then
+    load_char_defaults()
+  else
+    save_char_defaults()
+  end
+end
+
+function char_defaults()
   if you.turns() ~= 0 then
     return
   end
 
   if not load_attempted then
-    load_char_defaults(quiet)
+    mpr("Loading char defaults")
+
+    load_char_defaults()
     load_attempted = true
 
     -- Open the skill menu if we don't have settings to load.

@@ -29,6 +29,8 @@ item += potions? of.*cancellation:cyan
 item += potions? of.*ambrosia:blue
 item += potions? of.*experience:lightred
 item += potions? of.*heal wounds:white
+# Obsolete in 0.16
+ai += ring of regeneration:regen, !d
 item += potions? of.*(resistance|agility):green
 item += potions? of.*(haste|invisibility):lightgreen
 item += potions? of.*mutation:lightcyan
